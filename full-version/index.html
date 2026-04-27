@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>百顺扬电子商务 · 线上招商方案</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/animations/animations.css">
+<link rel="stylesheet" id="theme-link" href="../assets/themes/pitch-deck-vc.css">
+<style>
+/* ===== 基础样式 ===== */
+:root {
+  --brand-gold: #c9a227;
+  --brand-gold-light: #e8c547;
+  --brand-dark: #0c1e3e;
+  --brand-blue: #1a5fb4;
+  --brand-blue-light: #3584e4;
+}
+
+/* 通用slide样式 */
+.slide { padding: 60px 80px; }
+
+/* ===== 第1页：封面 ===== */
+.slide-1 {
+  background: linear-gradient(135deg, #0c1e3e 0%, #1a3a6e 50%, #2d5a9e 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.slide-1 .brand { font-size: 18px; letter-spacing: 8px; text-transform: uppercase; opacity: 0.7; margin-bottom: 30px; }
+.slide-1 h1 { font-size: clamp(48px, 7vw, 80px); font-weight: 900; line-height: 1.1; }
+.slide-1 .gold-text { background: linear-gradient(135deg, #c9a227, #e8c547); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* ===== 第2页：痛点标题 ===== */
+.slide-2 {
+  background: #fafbfc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slide-2 h2 { font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: var(--text-1); text-align: center; }
+
+/* ===== 第3页：加盟商在哪 ===== */
+.slide-3 {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fafbfc 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slide-3 h2 { font-size: clamp(36px, 5vw, 56px); font-weight: 900; color: var(--brand-blue); text-align: center; }
+
+/* ===== 第4页：传统方法 ===== */
+.slide-4 {
+  background: #fff;
+}
+.slide-4 h2 { font-size: 28px; font-weight: 700; color: var(--text-1); margin-bottom: 40px; }
+.slide-4 .methods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+.slide-4 .method-card {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+.slide-4 .method-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+.slide-4 .method-card .icon { font-size: 48px; margin-bottom: 20px; }
+.slide-4 .method-card h3 { font-size: 22px; font-weight: 700; color: var(--text-1); }
+
+/* ===== 第5-7页：痛点详情（气泡布局） ===== */
+.slide-pain {
+  background: #fafbfc;
+  position: relative;
+  overflow: hidden;
+}
+.slide-pain h2 { font-size: 32px; font-weight: 800; color: var(--text-1); text-align: center; margin-bottom: 40px; }
+.slide-pain .pain-bubbles {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 120px);
+}
+.slide-pain .bubble {
+  position: absolute;
+  background: #fff;
+  border-radius: 20px;
+  padding: 16px 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  font-size: 15px;
+  color: var(--text-2);
+  border-left: 4px solid #ef4444;
+  max-width: 280px;
+  line-height: 1.5;
+}
+.slide-pain .bubble.highlight {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-left-color: #dc2626;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+/* ===== 第8页：核心问题 ===== */
+.slide-8 {
+  background: linear-gradient(135deg, #0c1e3e 0%, #1a3a6e 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.slide-8 h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 700; line-height: 1.8; max-width: 900px; }
+.slide-8 strong { color: var(--brand-gold-light); position: relative; }
+.slide-8 strong::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 3px; background: var(--brand-gold); border-radius: 2px; }
+
+/* ===== 第9页：全新模式（体系图） ===== */
+.slide-9 {
+  background: linear-gradient(180deg, #0a0e1a 0%, #0c1e3e 50%, #1a3a6e 100%);
+  color: #fff;
+}
+.slide-9 h2 { font-size: 28px; font-weight: 700; color: var(--brand-gold-light); text-align: center; margin-bottom: 8px; }
+.slide-9 .subtitle { text-align: center; opacity: 0.8; font-size: 16px; margin-bottom: 30px; }
+.slide-9 .system-diagram {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: calc(100% - 140px);
+}
+.slide-9 .system-section {
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.slide-9 .system-section h3 { font-size: 18px; font-weight: 700; color: var(--brand-gold-light); margin-bottom: 12px; }
+.slide-9 .system-section p { font-size: 14px; line-height: 1.6; opacity: 0.85; }
+.slide-9 .system-section .sub-item { margin-top: 8px; padding-left: 16px; border-left: 2px solid var(--brand-gold); opacity: 0.7; }
+
+/* ===== 第10-14页：图片占位 ===== */
+.slide-image {
+  background: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slide-image .img-placeholder {
+  width: 80%;
+  height: 70%;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-3);
+  font-size: 18px;
+}
+
+/* ===== 第15页：大V合作 ===== */
+.slide-15 {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fafbfc 100%);
+}
+.slide-15 h2 { font-size: 32px; font-weight: 800; color: var(--text-1); margin-bottom: 24px; }
+.slide-15 .content-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  border-left: 5px solid var(--accent);
+}
+.slide-15 .content-box h3 { font-size: 24px; font-weight: 700; color: var(--accent); margin-bottom: 16px; }
+.slide-15 .content-box p { font-size: 18px; line-height: 1.8; color: var(--text-2); }
+
+/* ===== 第16页：图片占位 ===== */
+
+/* ===== 第17页：私域运营支持 ===== */
+.slide-17 {
+  background: #fff;
+}
+.slide-17 h2 { font-size: 28px; font-weight: 700; color: var(--text-1); margin-bottom: 40px; }
+.slide-17 .steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.slide-17 .step-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 16px;
+  padding: 28px 32px;
+  border-left: 4px solid var(--accent);
+}
+.slide-17 .step-num {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--grad);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.slide-17 .step-content h3 { font-size: 22px; font-weight: 700; color: var(--text-1); }
+.slide-17 .step-content p { font-size: 16px; color: var(--text-2); margin-top: 4px; }
+
+/* ===== 第18-20页：SOP标题页 ===== */
+.slide-sop-title {
+  background: linear-gradient(135deg, #0c1e3e 0%, #1a3a6e 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slide-sop-title h2 { font-size: clamp(36px, 5vw, 56px); font-weight: 900; text-align: center; }
+
+/* ===== 第21页：成交部 ===== */
+.slide-21 {
+  background: #fff;
+}
+.slide-21 h2 { font-size: 28px; font-weight: 700; color: var(--text-1); margin-bottom: 40px; }
+.slide-21 .dept-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.slide-21 .dept-card {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 20px;
+  padding: 36px;
+  border: 2px solid #e2e8f0;
+}
+.slide-21 .dept-card h3 { font-size: 24px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
+.slide-21 .dept-card p { font-size: 18px; color: var(--text-2); }
+
+/* ===== 第22页：组织架构标题 ===== */
+.slide-22 {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fafbfc 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slide-22 h2 { font-size: clamp(36px, 5vw, 56px); font-weight: 900; color: var(--text-1); text-align: center; }
+
+/* ===== 第23-24页：图片占位 ===== */
+
+/* ===== 第25页：感谢 ===== */
+.slide-25 {
+  background: linear-gradient(135deg, #0c1e3e 0%, #1a3a6e 50%, #2d5a9e 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.slide-25 .brand { font-size: 18px; letter-spacing: 8px; text-transform: uppercase; opacity: 0.7; margin-bottom: 30px; }
+.slide-25 h2 { font-size: clamp(40px, 6vw, 64px); font-weight: 900; }
+
+/* ===== 演讲者备注 ===== */
+.notes { display: none; }
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+  .slide { padding: 40px 24px; }
+  .slide-4 .methods-grid { grid-template-columns: 1fr; }
+  .slide-9 .system-diagram { grid-template-columns: 1fr; }
+  .slide-17 .steps-list { gap: 16px; }
+  .slide-21 .dept-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 第1页：封面 -->
+  <section class="slide slide-1" data-title="封面">
+    <div class="brand">BUSINESS</div>
+    <h1>百顺扬电子商务<br><span class="gold-text">线上招商方案</span></h1>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="1" data-total="25"></span></div>
+    <div class="notes">封面页</div>
+  </section>
+
+  <!-- 第2页：痛点标题 -->
+  <section class="slide slide-2" data-title="痛点标题">
+    <h2>招商加盟最大的痛点在哪里？</h2>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="2" data-total="25"></span></div>
+    <div class="notes">痛点标题页</div>
+  </section>
+
+  <!-- 第3页：加盟商在哪 -->
+  <section class="slide slide-3" data-title="加盟商在哪">
+    <h2>你的加盟商在哪？</h2>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="3" data-total="25"></span></div>
+    <div class="notes">加盟商在哪</div>
+  </section>
+
+  <!-- 第4页：传统方法 -->
+  <section class="slide slide-4" data-title="传统方法">
+    <h2>一、传统寻找加盟商方法</h2>
+    <div class="methods-grid">
+      <div class="method-card">
+        <div class="icon">📞</div>
+        <h3>买隔壁XX品牌电话</h3>
+      </div>
+      <div class="method-card">
+        <div class="icon">📢</div>
+        <h3>打传统广告</h3>
+      </div>
+      <div class="method-card">
+        <div class="icon">🎪</div>
+        <h3>开品宣发布会</h3>
+      </div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="4" data-total="25"></span></div>
+    <div class="notes">传统方法</div>
+  </section>
+
+  <!-- 第5页：买电话痛点 -->
+  <section class="slide slide-pain" data-title="买电话痛点">
+    <h2>买隔壁XX品牌电话</h2>
+    <div class="pain-bubbles">
+      <div class="bubble highlight" style="top: 5%; left: 5%;">电话保真吗？</div>
+      <div class="bubble" style="top: 15%; left: 35%;">有效率是多少？</div>
+      <div class="bubble" style="top: 25%; left: 60%;">是我的用户吗？</div>
+      <div class="bubble" style="top: 10%; left: 75%;">他能接受我的加盟条件吗？</div>
+      <div class="bubble" style="top: 35%; left: 10%;">他有兴趣但是他有钱吗？</div>
+      <div class="bubble" style="top: 40%; left: 40%;">他不会觉得我是骗子吧？</div>
+      <div class="bubble" style="top: 50%; left: 70%;">我该怎么证明我很好呢</div>
+      <div class="bubble" style="top: 60%; left: 20%;">打过去几秒钟怎么就挂了？</div>
+      <div class="bubble" style="top: 65%; left: 50%;">有没有那种两句话能说明品牌的话术？</div>
+      <div class="bubble" style="top: 75%; left: 5%;">这电话怎么打到国外了</div>
+      <div class="bubble" style="top: 80%; left: 55%;">为什么不接电话？</div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="5" data-total="25"></span></div>
+    <div class="notes">买电话痛点</div>
+  </section>
+
+  <!-- 第6页：打广告痛点 -->
+  <section class="slide slide-pain" data-title="打广告痛点">
+    <h2>打传统广告</h2>
+    <div class="pain-bubbles">
+      <div class="bubble highlight" style="top: 5%; left: 10%;">都说了我们有很好的供应链</div>
+      <div class="bubble" style="top: 15%; left: 40%;">我真的是一个很好的品牌</div>
+      <div class="bubble" style="top: 20%; left: 70%;">怎么就说两句没后续了</div>
+      <div class="bubble" style="top: 30%; left: 5%;">怎么这些人联系之前都不先了解一下我是干嘛的吗？</div>
+      <div class="bubble" style="top: 40%; left: 50%;">这都什么人这点钱怎么开</div>
+      <div class="bubble" style="top: 45%; left: 75%;">我该怎么证明我很好呢</div>
+      <div class="bubble" style="top: 55%; left: 15%;">每天怎么就这么点咨询</div>
+      <div class="bubble" style="top: 60%; left: 45%;">他就说想了解一下</div>
+      <div class="bubble" style="top: 70%; left: 5%;">他们都说再考虑考虑</div>
+      <div class="bubble" style="top: 75%; left: 60%;">不加微信我怎么让他更能了解我</div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="6" data-total="25"></span></div>
+    <div class="notes">打广告痛点</div>
+  </section>
+
+  <!-- 第7页：开发布会痛点 -->
+  <section class="slide slide-pain" data-title="开发布会痛点">
+    <h2>开品宣发布会</h2>
+    <div class="pain-bubbles">
+      <div class="bubble highlight" style="top: 5%; left: 5%;">开完发布会然后怎么做</div>
+      <div class="bubble" style="top: 15%; left: 35%;">定那么大的场子也不知道来几个</div>
+      <div class="bubble" style="top: 20%; left: 65%;">来的怎么都是蹭的</div>
+      <div class="bubble" style="top: 30%; left: 10%;">这些人也不像能加盟的</div>
+      <div class="bubble" style="top: 35%; left: 50%;">说好的怎么不来了</div>
+      <div class="bubble" style="top: 45%; left: 75%;">人去哪找</div>
+      <div class="bubble" style="top: 50%; left: 15%;">说了三五个人来结果一个没来</div>
+      <div class="bubble" style="top: 60%; left: 45%;">都是来领奖品的</div>
+      <div class="bubble" style="top: 70%; left: 5%;">说好了开最后也不回话了</div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="7" data-total="25"></span></div>
+    <div class="notes">开发布会痛点</div>
+  </section>
+
+  <!-- 第8页：核心问题 -->
+  <section class="slide slide-8" data-title="核心问题">
+    <h2>什么方法能又<strong>精准</strong>、客户又<strong>多</strong>、还能<strong>主动联系我们</strong>、还能<strong>让我们面对面交流</strong>，最后还能<strong>给我交保证金</strong>？</h2>
+    <div class="deck-footer" style="color: rgba(255,255,255,0.6);"><span>百顺扬电子商务</span><span class="slide-number" data-current="8" data-total="25"></span></div>
+    <div class="notes">核心问题</div>
+  </section>
+
+  <!-- 第9页：全新模式 -->
+  <section class="slide slide-9" data-title="全新模式">
+    <h2>全新线上招商模式</h2>
+    <p class="subtitle">头部 · 腰部 · 腿部 · 三位一体</p>
+    <div class="system-diagram">
+      <div class="system-section">
+        <h3>头部 · 产品</h3>
+        <p>我们的产品实际是——</p>
+        <p>一个稳定获利的赚钱机会</p>
+        <p>让加盟商知道我们赢了，而且能持续赢</p>
+      </div>
+      <div class="system-section">
+        <h3>腰部 · 招商内核</h3>
+        <p>一个好的中台是支撑强会销</p>
+        <p>体系招商模式的核心</p>
+        <p>他是一个系统体系</p>
+        <div class="sub-item">行业优势/政策/供应链</div>
+      </div>
+      <div class="system-section">
+        <h3>腿部 · 成交系统</h3>
+        <p>会销是最后一个漏斗</p>
+        <p>也是最重要的一个漏斗</p>
+        <p>决定了最终成交率</p>
+      </div>
+      <div class="system-section">
+        <h3>支撑体系</h3>
+        <p>成交系统 · 交付系统 · 招商铁军 · 会务系统</p>
+        <div class="sub-item">SOP/实施/现场管控</div>
+        <div class="sub-item">品牌交付/知识交付/门店交付</div>
+        <div class="sub-item">成交力/侦查力/规则力</div>
+        <div class="sub-item">组织力/协调力/承接力</div>
+        <div class="sub-item">课件系统 · 讲师系统</div>
+        <div class="sub-item">框架/流程/案例 · 表达力/感染力/情绪力</div>
+      </div>
+    </div>
+    <div class="deck-footer" style="color: rgba(255,255,255,0.6);"><span>百顺扬电子商务</span><span class="slide-number" data-current="9" data-total="25"></span></div>
+    <div class="notes">全新模式体系图</div>
+  </section>
+
+  <!-- 第10页：图片占位 -->
+  <section class="slide slide-image" data-title="图片页">
+    <div class="img-placeholder">[图片内容 - 第10页]</div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="10" data-total="25"></span></div>
+    <div class="notes">图片页</div>
+  </section>
+
+  <!-- 第11页：图片占位 -->
+  <section class="slide slide-image" data-title="图片页">
+    <div class="img-placeholder">[图片内容 - 第11页]</div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="11" data-total="25"></span></div>
+    <div class="notes">图片页</div>
+  </section>
+
+  <!-- 第12页：图片占位 -->
+  <section class="slide slide-image" data-title="图片页">
+    <div class="img-placeholder">[图片内容 - 第12页]</div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="12" data-total="25"></span></div>
+    <div class="notes">图片页</div>
+  </section>
+
+  <!-- 第13页：图片占位 -->
+  <section class="slide slide-image" data-title="图片页">
+    <div class="img-placeholder">[图片内容 - 第13页]</div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="13" data-total="25"></span></div>
+    <div class="notes">图片页</div>
+  </section>
+
+  <!-- 第14页：图片占位 -->
+  <section class="slide slide-image" data-title="图片页">
+    <div class="img-placeholder">[图片内容 - 第14页]</div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="14" data-total="25"></span></div>
+    <div class="notes">图片页</div>
+  </section>
+
+  <!-- 第15页：大V合作 -->
+  <section class="slide slide-15" data-title="大V合作">
+    <div class="content-box">
+      <h3>大V合作</h3>
+      <p>快速打出名气</p>
+      <p>可快速同化吸收其他博主的垂直粉丝</p>
+      <p>共创可以有效的提升视频内容质量</p>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="15" data-total="25"></span></div>
+    <div class="notes">大V合作</div>
+  </section>
+
+  <!-- 第16页：图片占位 -->
+  <section class="slide slide-image" data-title="图片页">
+    <div class="img-placeholder">[图片内容 - 第16页]</div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="16" data-total="25"></span></div>
+    <div class="notes">图片页</div>
+  </section>
+
+  <!-- 第17页：私域运营支持 -->
+  <section class="slide slide-17" data-title="私域运营支持">
+    <h2>1：私域运营支持</h2>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>客资承接</h3>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>电销组</h3>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>私域营销组</h3>
+        </div>
+      </div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="17" data-total="25"></span></div>
+    <div class="notes">私域运营支持</div>
+  </section>
+
+  <!-- 第18页：私域外呼组SOP -->
+  <section class="slide slide-sop-title" data-title="外呼组SOP">
+    <h2>私域外呼组SOP</h2>
+    <div class="deck-footer" style="color: rgba(255,255,255,0.6);"><span>百顺扬电子商务</span><span class="slide-number" data-current="18" data-total="25"></span></div>
+    <div class="notes">外呼组SOP标题</div>
+  </section>
+
+  <!-- 第19页：私域外呼组话术流程 -->
+  <section class="slide slide-sop-title" data-title="话术流程">
+    <h2>私域外呼组话术流程</h2>
+    <div class="deck-footer" style="color: rgba(255,255,255,0.6);"><span>百顺扬电子商务</span><span class="slide-number" data-current="19" data-total="25"></span></div>
+    <div class="notes">话术流程标题</div>
+  </section>
+
+  <!-- 第20页：私域营组SOP -->
+  <section class="slide slide-sop-title" data-title="营销组SOP">
+    <h2>私域营组SOP</h2>
+    <div class="deck-footer" style="color: rgba(255,255,255,0.6);"><span>百顺扬电子商务</span><span class="slide-number" data-current="20" data-total="25"></span></div>
+    <div class="notes">营销组SOP标题</div>
+  </section>
+
+  <!-- 第21页：成交部 -->
+  <section class="slide slide-21" data-title="成交部">
+    <h2>1：成交部</h2>
+    <div class="dept-grid">
+      <div class="dept-card">
+        <h3>成交及交付</h3>
+      </div>
+      <div class="dept-card">
+        <h3>2：商学院</h3>
+      </div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="21" data-total="25"></span></div>
+    <div class="notes">成交部</div>
+  </section>
+
+  <!-- 第22页：成交部组织架构 -->
+  <section class="slide slide-22" data-title="组织架构">
+    <h2>成交部组织架构</h2>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="22" data-total="25"></span></div>
+    <div class="notes">组织架构标题</div>
+  </section>
+
+  <!-- 第23页：图片占位 -->
+  <section class="slide slide-image" data-title="图片页">
+    <div class="img-placeholder">[图片内容 - 第23页]</div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="23" data-total="25"></span></div>
+    <div class="notes">图片页</div>
+  </section>
+
+  <!-- 第24页：图片占位 -->
+  <section class="slide slide-image" data-title="图片页">
+    <div class="img-placeholder">[图片内容 - 第24页]</div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="24" data-total="25"></span></div>
+    <div class="notes">图片页</div>
+  </section>
+
+  <!-- 第25页：感谢 -->
+  <section class="slide slide-25" data-title="感谢">
+    <div class="brand">BUSINESS</div>
+    <h2>感谢各位的观看</h2>
+    <div class="deck-footer" style="color: rgba(255,255,255,0.6);"><span>百顺扬电子商务</span><span class="slide-number" data-current="25" data-total="25"></span></div>
+    <div class="notes">感谢页</div>
+  </section>
+
+</div>
+<script src="../assets/runtime.js"></script>
+</body>
+</html>
