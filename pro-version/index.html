@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>百顺扬电子商务 · 线上招商方案</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/animations/animations.css">
+<link rel="stylesheet" id="theme-link" href="../assets/themes/pitch-deck-vc.css">
+<style>
+/* ===== 基于 pitch-deck 模板的自定义样式 ===== */
+.tpl-pitch-deck {
+  --bg: #ffffff; --bg-soft: #f6f7fb; --surface: #ffffff; --surface-2: #f2f4fa;
+  --border: rgba(20,25,60,.08); --border-strong: rgba(20,25,60,.18);
+  --text-1: #0d1130; --text-2: #4a5070; --text-3: #8a90ad;
+  --accent: #3b5bff; --accent-2: #7a46ff; --accent-3: #d94cff;
+  --grad: linear-gradient(135deg, #3b5bff 0%, #7a46ff 55%, #d94cff 100%);
+  --grad-soft: linear-gradient(135deg, #eef1ff, #f4edff 55%, #fbedff);
+  --radius: 20px; --radius-lg: 28px;
+  --shadow: 0 14px 40px rgba(20,25,60,.08), 0 2px 8px rgba(20,25,60,.04);
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+}
+
+.tpl-pitch-deck .slide { padding: 88px 112px; }
+.tpl-pitch-deck .h1 { font-size: 86px; line-height: 1.02; font-weight: 900; letter-spacing: -.035em; }
+.tpl-pitch-deck .h2 { font-size: 62px; font-weight: 800; letter-spacing: -.03em; }
+.tpl-pitch-deck .mega { font-size: 180px; font-weight: 900; line-height: .95; letter-spacing: -.05em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tpl-pitch-deck .mega-sub { font-size: 28px; color: var(--text-2); margin-top: 18px; }
+.tpl-pitch-deck .cover-bg { position: absolute; inset: 0; background: var(--grad-soft); z-index: -1; }
+.tpl-pitch-deck .cover-blob { position: absolute; right: -140px; top: -140px; width: 560px; height: 560px; border-radius: 50%; background: var(--grad); filter: blur(80px); opacity: .35; z-index: -1; }
+.tpl-pitch-deck .brand { font-weight: 800; font-size: 22px; letter-spacing: -.02em; }
+.tpl-pitch-deck .num-tag { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent); letter-spacing: .12em; }
+.tpl-pitch-deck .metric { display: flex; flex-direction: column; gap: 6px; }
+.tpl-pitch-deck .metric .n { font-size: 72px; font-weight: 900; letter-spacing: -.035em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1; }
+.tpl-pitch-deck .metric .l { color: var(--text-2); font-size: 16px; }
+.tpl-pitch-deck .section-num { font-size: 220px; font-weight: 900; line-height: .9; color: var(--surface-2); position: absolute; right: 72px; bottom: 40px; z-index: 0; letter-spacing: -.05em; }
+.tpl-pitch-deck .slide > * { position: relative; z-index: 1; }
+.tpl-pitch-deck .deck-footer { color: var(--text-3); }
+
+/* 痛点卡片 */
+.pain-card { background: #fff; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); border-left: 4px solid #ef4444; }
+.pain-card h4 { color: #dc2626; font-size: 18px; margin-bottom: 12px; }
+.pain-card p { color: var(--text-2); font-size: 15px; line-height: 1.6; }
+
+/* 流程步骤 */
+.step-card { background: var(--grad-soft); border-radius: var(--radius); padding: 32px; text-align: center; }
+.step-card .step-num { width: 56px; height: 56px; border-radius: 50%; background: var(--grad); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 24px; margin: 0 auto 16px; }
+.step-card h4 { color: var(--text-1); font-size: 20px; margin-bottom: 8px; }
+.step-card p { color: var(--text-2); font-size: 14px; }
+
+/* 体系卡片 */
+.system-card { background: linear-gradient(135deg, #0c1e3e, #1a3a6e); border-radius: var(--radius); padding: 36px; color: #fff; }
+.system-card h4 { color: #e8c547; font-size: 22px; margin-bottom: 12px; }
+.system-card p { color: rgba(255,255,255,.85); font-size: 15px; line-height: 1.6; }
+
+/* 图片占位 */
+.img-placeholder { width: 100%; height: 400px; background: linear-gradient(135deg, #e2e8f0, #cbd5e1); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--text-3); font-size: 18px; }
+
+/* 演讲者备注 */
+.notes { display: none; }
+</style>
+</head>
+<body class="tpl-pitch-deck">
+<div class="deck">
+
+  <!-- 1. 封面 -->
+  <section class="slide" data-title="封面">
+    <div class="cover-bg"></div>
+    <div class="cover-blob"></div>
+    <div style="position:absolute;top:56px;left:112px"><span class="brand">百顺扬电子商务</span></div>
+    <p class="kicker">BUSINESS</p>
+    <h1 class="h1 anim-fade-up" data-anim="fade-up">线上招商<br><span class="gradient-text">方案</span></h1>
+    <p class="lede mt-m">全新招商模式 · 精准获客 · 高效成交 · 持续盈利</p>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="1" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】各位老板下午好！我是百顺扬电子商务的招商负责人。今天给大家带来一套经过验证的线上招商方案。</div>
+  </section>
+
+  <!-- 2. 痛点标题 -->
+  <section class="slide" data-title="痛点标题">
+    <span class="section-num">01</span>
+    <p class="num-tag">PROBLEM</p>
+    <h2 class="h2 mt-s">招商加盟最大的<br>痛点在哪里？</h2>
+    <p class="lede mt-m">传统招商方法效率低、成本高、转化率差</p>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="2" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】先问大家一个问题：招商加盟最大的痛点在哪里？</div>
+  </section>
+
+  <!-- 3. 加盟商在哪 -->
+  <section class="slide" data-title="加盟商在哪">
+    <span class="section-num">02</span>
+    <p class="num-tag">QUESTION</p>
+    <h2 class="h2 mt-s">你的加盟商<br>在哪？</h2>
+    <p class="lede mt-m">找不到精准客户，招商就是大海捞针</p>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="3" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】你的加盟商在哪？这个问题困扰了多少品牌方。</div>
+  </section>
+
+  <!-- 4. 传统方法 -->
+  <section class="slide" data-title="传统方法">
+    <span class="section-num">03</span>
+    <p class="num-tag">TRADITIONAL</p>
+    <h2 class="h2 mt-s">传统寻找加盟商<br>方法</h2>
+    <div class="grid g3 mt-l">
+      <div class="card"><div style="font-size:48px;margin-bottom:16px">📞</div><h4>买隔壁XX品牌电话</h4><p class="dim">购买竞品客户名单，电话推销</p></div>
+      <div class="card"><div style="font-size:48px;margin-bottom:16px">📢</div><h4>打传统广告</h4><p class="dim">电视、报纸、户外广告投放</p></div>
+      <div class="card"><div style="font-size:48px;margin-bottom:16px">🎪</div><h4>开品宣发布会</h4><p class="dim">大型招商会议，现场签约</p></div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="4" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】传统方法就这三种：买电话、打广告、开发布会。</div>
+  </section>
+
+  <!-- 5. 买电话痛点 -->
+  <section class="slide" data-title="买电话痛点">
+    <span class="section-num">04</span>
+    <p class="num-tag">PAIN POINT</p>
+    <h2 class="h2 mt-s">买隔壁XX品牌电话</h2>
+    <p class="lede mt-m">12 个核心痛点</p>
+    <div class="grid g3 mt-l">
+      <div class="pain-card"><h4>❌ 电话保真吗？</h4><p>买来的电话名单，真实性无法验证</p></div>
+      <div class="pain-card"><h4>❌ 有效率是多少？</h4><p>接通率不到 10%，大部分空号或停机</p></div>
+      <div class="pain-card"><h4>❌ 是我的用户吗？</h4><p>不是精准目标人群，浪费大量时间</p></div>
+      <div class="pain-card"><h4>❌ 他能接受我的加盟条件吗？</h4><p>客户预算不匹配，无法成交</p></div>
+      <div class="pain-card"><h4>❌ 他有兴趣但是他有钱吗？</h4><p>意向度高但资金不足</p></div>
+      <div class="pain-card"><h4>❌ 他不会觉得我是骗子吧？</h4><p>陌生电话信任度极低</p></div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="5" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】买电话的痛点：电话保真吗？有效率是多少？是我的用户吗？</div>
+  </section>
+
+  <!-- 6. 打广告痛点 -->
+  <section class="slide" data-title="打广告痛点">
+    <span class="section-num">05</span>
+    <p class="num-tag">PAIN POINT</p>
+    <h2 class="h2 mt-s">打传统广告</h2>
+    <p class="lede mt-m">11 个核心痛点</p>
+    <div class="grid g3 mt-l">
+      <div class="pain-card"><h4>❌ 都说了我们有很好的供应链</h4><p>广告内容无法打动客户</p></div>
+      <div class="pain-card"><h4>❌ 我真的是一个很好的品牌</h4><p>自说自话，缺乏信任背书</p></div>
+      <div class="pain-card"><h4>❌ 怎么就说两句没后续了</h4><p>客户咨询后无法持续跟进</p></div>
+      <div class="pain-card"><h4>❌ 每天怎么就这么点咨询</h4><p>广告效果差，获客成本高</p></div>
+      <div class="pain-card"><h4>❌ 他们都说再考虑考虑</h4><p>缺乏转化机制，客户流失</p></div>
+      <div class="pain-card"><h4>❌ 不加微信我怎么让他更能了解我</h4><p>无法建立私域流量</p></div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="6" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】打广告的痛点：广告费花了，来的都是问价的，转化率极低。</div>
+  </section>
+
+  <!-- 7. 开发布会痛点 -->
+  <section class="slide" data-title="开发布会痛点">
+    <span class="section-num">06</span>
+    <p class="num-tag">PAIN POINT</p>
+    <h2 class="h2 mt-s">开品宣发布会</h2>
+    <p class="lede mt-m">10 个核心痛点</p>
+    <div class="grid g3 mt-l">
+      <div class="pain-card"><h4>❌ 开完发布会然后怎么做</h4><p>缺乏后续跟进机制</p></div>
+      <div class="pain-card"><h4>❌ 定那么大的场子也不知道来几个</h4><p>到场率低，成本浪费</p></div>
+      <div class="pain-card"><h4>❌ 来的怎么都是蹭的</h4><p>非目标客户占大多数</p></div>
+      <div class="pain-card"><h4>❌ 说好的怎么不来了</h4><p>爽约率高，准备白费</p></div>
+      <div class="pain-card"><h4>❌ 都是来领奖品的</h4><p>薅羊毛客户多</p></div>
+      <div class="pain-card"><h4>❌ 说好了开最后也不回话了</h4><p>成交率低，ROI 算不过来</p></div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="7" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】开发布会的痛点：一场发布会成本几十万，转化率几乎为零。</div>
+  </section>
+
+  <!-- 8. 核心问题 -->
+  <section class="slide" data-title="核心问题">
+    <span class="section-num">07</span>
+    <p class="num-tag">QUESTION</p>
+    <h2 class="h2 mt-s">什么方法能又<span class="gradient-text">精准</span>、<br>客户又<span class="gradient-text">多</span>、还能<span class="gradient-text">主动联系我们</span>？</h2>
+    <p class="lede mt-m">还能让我们面对面交流，最后还能给我交保证金？</p>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="8" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】灵魂拷问：精准、量多、主动、面对面、交保证金——五个条件同时满足。</div>
+  </section>
+
+  <!-- 9. 全新模式 -->
+  <section class="slide" data-title="全新模式">
+    <span class="section-num">08</span>
+    <p class="num-tag">SOLUTION</p>
+    <h2 class="h2 mt-s">全新线上招商模式</h2>
+    <p class="lede mt-m">头部 · 腰部 · 腿部 · 三位一体</p>
+    <div class="grid g3 mt-l">
+      <div class="system-card"><h4>👑 头部 · 产品</h4><p>我们的产品实际是——一个稳定获利的赚钱机会，让加盟商知道我们赢了，而且能持续赢</p></div>
+      <div class="system-card"><h4>🎯 腰部 · 招商内核</h4><p>一个好的中台是支撑强会销体系招商模式的核心，他是一个系统体系。行业优势/政策/供应链</p></div>
+      <div class="system-card"><h4>🚀 腿部 · 成交系统</h4><p>会销是最后一个漏斗，也是最重要的一个漏斗，决定了最终成交率</p></div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="9" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】三位一体：头部是产品，腰部是招商内核，腿部是成交系统。</div>
+  </section>
+
+  <!-- 10. 六大支撑体系 -->
+  <section class="slide" data-title="六大支撑">
+    <span class="section-num">09</span>
+    <p class="num-tag">SYSTEM</p>
+    <h2 class="h2 mt-s">六大支撑体系</h2>
+    <div class="grid g3 mt-l">
+      <div class="card"><h4>📚 课件系统</h4><p class="dim">框架/流程/案例</p></div>
+      <div class="card"><h4>🎤 讲师系统</h4><p class="dim">表达力/感染力/情绪力</p></div>
+      <div class="card"><h4>💰 成交系统</h4><p class="dim">成交力/侦查力/规则力</p></div>
+      <div class="card"><h4>📦 交付系统</h4><p class="dim">品牌交付/知识交付/门店交付</p></div>
+      <div class="card"><h4>⚔️ 招商铁军</h4><p class="dim">组织力/协调力/承接力</p></div>
+      <div class="card"><h4>🎯 会务系统</h4><p class="dim">SOP/实施/现场管控</p></div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="10" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】六大体系：课件、讲师、成交、交付、铁军、会务。</div>
+  </section>
+
+  <!-- 11-14. 图片占位 -->
+  <section class="slide" data-title="图片页"><div class="img-placeholder">[第11页 - 图片内容]</div><div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="11" data-total="25"></span></div></section>
+  <section class="slide" data-title="图片页"><div class="img-placeholder">[第12页 - 图片内容]</div><div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="12" data-total="25"></span></div></section>
+  <section class="slide" data-title="图片页"><div class="img-placeholder">[第13页 - 图片内容]</div><div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="13" data-total="25"></span></div></section>
+  <section class="slide" data-title="图片页"><div class="img-placeholder">[第14页 - 图片内容]</div><div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="14" data-total="25"></span></div></section>
+
+  <!-- 15. 大V合作 -->
+  <section class="slide" data-title="大V合作">
+    <span class="section-num">10</span>
+    <p class="num-tag">TRAFFIC</p>
+    <h2 class="h2 mt-s">大V合作 · 快速打出名气</h2>
+    <div class="grid g2 mt-l">
+      <div class="card"><h4>🚀 垂直粉丝同化</h4><p class="dim">可快速同化吸收其他博主的垂直粉丝，精准触达目标加盟人群</p></div>
+      <div class="card"><h4>✨ 内容质量提升</h4><p class="dim">共创可以有效的提升视频内容质量，增强品牌专业形象</p></div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="15" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】大V合作：垂直粉丝同化 + 内容质量提升。</div>
+  </section>
+
+  <!-- 16. 图片占位 -->
+  <section class="slide" data-title="图片页"><div class="img-placeholder">[第16页 - 图片内容]</div><div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="16" data-total="25"></span></div></section>
+
+  <!-- 17. 私域运营支持 -->
+  <section class="slide" data-title="私域运营">
+    <span class="section-num">11</span>
+    <p class="num-tag">OPERATION</p>
+    <h2 class="h2 mt-s">1：私域运营支持</h2>
+    <div class="grid g3 mt-l">
+      <div class="step-card"><div class="step-num">1</div><h4>客资承接</h4></div>
+      <div class="step-card"><div class="step-num">2</div><h4>电销组</h4></div>
+      <div class="step-card"><div class="step-num">3</div><h4>私域营销组</h4></div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="17" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】私域运营三步：客资承接、电销组、私域营销组。</div>
+  </section>
+
+  <!-- 18. 外呼组SOP -->
+  <section class="slide" data-title="外呼SOP">
+    <span class="section-num">12</span>
+    <p class="num-tag">SOP</p>
+    <h2 class="h2 mt-s">私域外呼组SOP</h2>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="18" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】外呼组SOP标题页。</div>
+  </section>
+
+  <!-- 19. 话术流程 -->
+  <section class="slide" data-title="话术流程">
+    <span class="section-num">13</span>
+    <p class="num-tag">SCRIPT</p>
+    <h2 class="h2 mt-s">私域外呼组话术流程</h2>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="19" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】话术流程标题页。</div>
+  </section>
+
+  <!-- 20. 营销组SOP -->
+  <section class="slide" data-title="营销SOP">
+    <span class="section-num">14</span>
+    <p class="num-tag">SOP</p>
+    <h2 class="h2 mt-s">私域营组SOP</h2>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="20" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】营销组SOP标题页。</div>
+  </section>
+
+  <!-- 21. 成交部 -->
+  <section class="slide" data-title="成交部">
+    <span class="section-num">15</span>
+    <p class="num-tag">DEPARTMENT</p>
+    <h2 class="h2 mt-s">1：成交部</h2>
+    <div class="grid g2 mt-l">
+      <div class="card"><h4>💼 成交及交付</h4></div>
+      <div class="card"><h4>🎓 2：商学院</h4></div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="21" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】成交部：成交及交付 + 商学院。</div>
+  </section>
+
+  <!-- 22. 组织架构 -->
+  <section class="slide" data-title="组织架构">
+    <span class="section-num">16</span>
+    <p class="num-tag">ORG</p>
+    <h2 class="h2 mt-s">成交部组织架构</h2>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="22" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】组织架构标题页。</div>
+  </section>
+
+  <!-- 23-24. 图片占位 -->
+  <section class="slide" data-title="图片页"><div class="img-placeholder">[第23页 - 图片内容]</div><div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="23" data-total="25"></span></div></section>
+  <section class="slide" data-title="图片页"><div class="img-placeholder">[第24页 - 图片内容]</div><div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="24" data-total="25"></span></div></section>
+
+  <!-- 25. 感谢 -->
+  <section class="slide center tc" data-title="感谢">
+    <div class="cover-bg"></div>
+    <div>
+      <p class="kicker">BUSINESS</p>
+      <div class="mega">Thanks.</div>
+      <p class="mega-sub">百顺扬电子商务 · 感谢各位的观看</p>
+      <div class="row mt-l" style="justify-content:center;gap:24px">
+        <span class="pill pill-accent">立即咨询</span>
+        <span class="pill">下载资料</span>
+      </div>
+    </div>
+    <div class="deck-footer"><span>百顺扬电子商务</span><span class="slide-number" data-current="25" data-total="25"></span></div>
+    <div class="notes">【演讲者备注】感谢各位老板的时间，期待与您合作！</div>
+  </section>
+
+</div>
+<script src="../assets/runtime.js"></script>
+</body>
+</html>
