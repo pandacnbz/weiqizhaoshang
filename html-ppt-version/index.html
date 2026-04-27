@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>蔚起 · 线上招商方案</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/animations/animations.css">
+<link rel="stylesheet" href="../assets/themes/corporate-clean.css">
+<style>
+/* 蔚起品牌色 */
+:root {
+  --brand-primary: #1a5fb4;
+  --brand-secondary: #3584e4;
+  --brand-accent: #ff6b35;
+  --brand-gold: #c9a227;
+}
+
+/* 封面 */
+.cover-slide {
+  background: linear-gradient(135deg, #0c1e3e 0%, #1a5fb4 50%, #3584e4 100%);
+  color: #fff;
+}
+.cover-slide .brand {
+  font-size: 18px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.cover-slide h1 {
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: 900;
+  margin-top: 24px;
+  line-height: 1.1;
+}
+.cover-slide .subtitle {
+  font-size: 24px;
+  opacity: 0.85;
+  margin-top: 16px;
+}
+
+/* 痛点页 */
+.pain-slide {
+  background: #f8f9fa;
+}
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+.pain-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.pain-card h3 {
+  color: var(--brand-primary);
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.pain-card .questions {
+  font-size: 14px;
+  line-height: 2;
+  color: #555;
+}
+
+/* 体系页 */
+.system-slide {
+  background: linear-gradient(180deg, #0c1e3e 0%, #1a3a6e 100%);
+  color: #fff;
+}
+.system-visual {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 48px;
+  margin-top: 64px;
+  height: 400px;
+}
+.system-pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pillar-head {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+.pillar-head.gold {
+  background: linear-gradient(135deg, #c9a227, #e8c547);
+  color: #0c1e3e;
+}
+.pillar-body {
+  width: 200px;
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+.pillar-body h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--brand-gold);
+}
+.pillar-body p {
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* SOP页 */
+.sop-slide {
+  background: #fff;
+}
+.sop-flow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
+  padding: 0 48px;
+}
+.sop-step {
+  text-align: center;
+  flex: 1;
+}
+.sop-step .step-num {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin: 0 auto 16px;
+}
+.sop-step h4 {
+  font-size: 16px;
+  color: var(--brand-primary);
+  margin-bottom: 8px;
+}
+.sop-step p {
+  font-size: 13px;
+  color: #666;
+}
+.sop-arrow {
+  color: var(--brand-primary);
+  font-size: 24px;
+  margin: 0 16px;
+}
+
+/* 组织架构 */
+.org-slide {
+  background: #f0f4f8;
+}
+.org-chart {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 48px;
+}
+.org-dept {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  width: 280px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.org-dept h3 {
+  color: var(--brand-primary);
+  font-size: 20px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--brand-secondary);
+}
+.org-dept ul {
+  list-style: none;
+  padding: 0;
+}
+.org-dept li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #555;
+  border-bottom: 1px solid #eee;
+}
+.org-dept li:last-child {
+  border-bottom: none;
+}
+
+/* 结尾 */
+.thanks-slide {
+  background: linear-gradient(135deg, #0c1e3e 0%, #1a5fb4 50%, #3584e4 100%);
+  color: #fff;
+  text-align: center;
+}
+.thanks-slide h2 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+}
+.thanks-slide .contact {
+  margin-top: 32px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1. 封面 -->
+  <section class="slide cover-slide" data-title="封面">
+    <div class="brand">BUSINESS</div>
+    <h1>蔚起<br>线上招商方案</h1>
+    <p class="subtitle">全新招商模式 · 精准获客 · 高效成交</p>
+    <div class="deck-footer"><span>蔚起品牌</span><span class="slide-number" data-current="1" data-total="12"></span></div>
+  </section>
+
+  <!-- 2. 痛点引入 -->
+  <section class="slide pain-slide" data-title="痛点">
+    <h2 class="h2">招商加盟最大的痛点在哪里？</h2>
+    <p class="lede">传统招商方法效率低、成本高、转化率差</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <h3>买隔壁品牌电话</h3>
+        <div class="questions">
+          电话保真吗？有效率是多少？<br>
+          是我的用户吗？有钱加盟吗？<br>
+          两句话能说清品牌吗？<br>
+          怎么打到国外了？
+        </div>
+      </div>
+      <div class="pain-card">
+        <h3>打传统广告</h3>
+        <div class="questions">
+          供应链优势说了没后续<br>
+          每天咨询量太少<br>
+          都说再考虑考虑<br>
+          不加微信怎么深入了解
+        </div>
+      </div>
+      <div class="pain-card">
+        <h3>开品宣发布会</h3>
+        <div class="questions">
+          定大场子不知道来几个<br>
+          来的都是蹭奖品的<br>
+          说好了开最后不回话<br>
+          人去哪找？
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 核心问题 -->
+  <section class="slide center" data-title="核心问题">
+    <h2 class="h2" style="max-width: 80%; text-align: center;">
+      什么方法能又<strong style="color: var(--brand-primary);">精准</strong>、
+      客户又<strong style="color: var(--brand-primary);">多</strong>、
+      还能<strong style="color: var(--brand-primary);">主动联系我们</strong>、
+      还能<strong style="color: var(--brand-primary);">面对面交流</strong>，
+      最后还能<strong style="color: var(--brand-primary);">交保证金</strong>？
+    </h2>
+  </section>
+
+  <!-- 4. 全新模式 -->
+  <section class="slide system-slide" data-title="全新模式">
+    <h2 class="h2" style="color: #fff;">全新线上招商模式</h2>
+    <p class="lede" style="color: rgba(255,255,255,0.8);">头部 · 腰部 · 腿部 · 三位一体</p>
+    <div class="system-visual">
+      <div class="system-pillar">
+        <div class="pillar-head gold">头部</div>
+        <div class="pillar-body">
+          <h4>产品</h4>
+          <p>稳定获利的赚钱机会<br>让加盟商知道我们赢了<br>而且能持续赢</p>
+        </div>
+      </div>
+      <div class="system-pillar">
+        <div class="pillar-head gold">腰部</div>
+        <div class="pillar-body">
+          <h4>招商内核</h4>
+          <p>行业优势 / 政策 / 供应链<br>好的中台支撑强会销<br>系统体系</p>
+        </div>
+      </div>
+      <div class="system-pillar">
+        <div class="pillar-head gold">腿部</div>
+        <div class="pillar-body">
+          <h4>成交系统</h4>
+          <p>会销是最后一个漏斗<br>也是最重要的漏斗<br>决定最终成交率</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 体系详解 -->
+  <section class="slide" data-title="体系详解">
+    <h2 class="h2">六大支撑体系</h2>
+    <div class="grid g3 mt-l">
+      <div class="card">
+        <h4 style="color: var(--brand-primary);">课件系统</h4>
+        <p class="dim">框架 / 流程 / 案例</p>
+      </div>
+      <div class="card">
+        <h4 style="color: var(--brand-primary);">讲师系统</h4>
+        <p class="dim">表达力 / 感染力 / 情绪力</p>
+      </div>
+      <div class="card">
+        <h4 style="color: var(--brand-primary);">成交系统</h4>
+        <p class="dim">成交力 / 侦查力 / 规则力</p>
+      </div>
+      <div class="card">
+        <h4 style="color: var(--brand-primary);">交付系统</h4>
+        <p class="dim">品牌交付 / 知识交付 / 门店交付</p>
+      </div>
+      <div class="card">
+        <h4 style="color: var(--brand-primary);">招商铁军</h4>
+        <p class="dim">组织力 / 协调力 / 承接力</p>
+      </div>
+      <div class="card">
+        <h4 style="color: var(--brand-primary);">会务系统</h4>
+        <p class="dim">SOP / 实施 / 现场管控</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 流量获取 -->
+  <section class="slide" data-title="流量获取">
+    <h2 class="h2">大V合作 · 快速打出名气</h2>
+    <div class="grid g2 mt-l">
+      <div class="card">
+        <h4>垂直粉丝同化</h4>
+        <p class="dim">可快速同化吸收其他博主的垂直粉丝，精准触达目标加盟人群</p>
+      </div>
+      <div class="card">
+        <h4>内容质量提升</h4>
+        <p class="dim">共创可以有效提升视频内容质量，增强品牌专业形象</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 私域运营 -->
+  <section class="slide" data-title="私域运营">
+    <h2 class="h2">私域运营支持体系</h2>
+    <div class="sop-flow">
+      <div class="sop-step">
+        <div class="step-num">1</div>
+        <h4>客资承接</h4>
+        <p>快速响应 · 专业接待</p>
+      </div>
+      <div class="sop-arrow">→</div>
+      <div class="sop-step">
+        <div class="step-num">2</div>
+        <h4>电销组</h4>
+        <p>精准筛选 · 意向确认</p>
+      </div>
+      <div class="sop-arrow">→</div>
+      <div class="sop-step">
+        <div class="step-num">3</div>
+        <h4>私域营销组</h4>
+        <p>深度培育 · 转化成交</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. 外呼SOP -->
+  <section class="slide sop-slide" data-title="外呼SOP">
+    <h2 class="h2">私域外呼组 SOP</h2>
+    <div class="sop-flow" style="margin-top: 64px;">
+      <div class="sop-step">
+        <div class="step-num">1</div>
+        <h4>首次触达</h4>
+        <p>自我介绍 · 品牌说明</p>
+      </div>
+      <div class="sop-arrow">→</div>
+      <div class="sop-step">
+        <div class="step-num">2</div>
+        <h4>需求挖掘</h4>
+        <p>了解背景 · 匹配需求</p>
+      </div>
+      <div class="sop-arrow">→</div>
+      <div class="sop-step">
+        <div class="step-num">3</div>
+        <h4>价值传递</h4>
+        <p>优势展示 · 案例分享</p>
+      </div>
+      <div class="sop-arrow">→</div>
+      <div class="sop-step">
+        <div class="step-num">4</div>
+        <h4>邀约参会</h4>
+        <p>确认意向 · 锁定参会</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. 话术流程 -->
+  <section class="slide" data-title="话术流程">
+    <h2 class="h2">私域外呼组话术流程</h2>
+    <div class="card mt-l" style="padding: 32px;">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center;">
+        <div>
+          <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--brand-primary); color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-weight: 700;">开场</div>
+          <p class="dim">30秒黄金开场<br>建立信任</p>
+        </div>
+        <div>
+          <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--brand-secondary); color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-weight: 700;">探需</div>
+          <p class="dim">3分钟需求挖掘<br>精准定位</p>
+        </div>
+        <div>
+          <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--brand-accent); color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-weight: 700;">呈现</div>
+          <p class="dim">5分钟价值呈现<br>案例佐证</p>
+        </div>
+        <div>
+          <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--brand-gold); color: #0c1e3e; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-weight: 700;">成交</div>
+          <p class="dim">2分钟促单邀约<br>锁定参会</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. 营销SOP -->
+  <section class="slide sop-slide" data-title="营销SOP">
+    <h2 class="h2">私域营销组 SOP</h2>
+    <div class="sop-flow" style="margin-top: 64px;">
+      <div class="sop-step">
+        <div class="step-num">1</div>
+        <h4>标签分层</h4>
+        <p>按意向度分类管理</p>
+      </div>
+      <div class="sop-arrow">→</div>
+      <div class="sop-step">
+        <div class="step-num">2</div>
+        <h4>内容触达</h4>
+        <p>精准内容推送</p>
+      </div>
+      <div class="sop-arrow">→</div>
+      <div class="sop-step">
+        <div class="step-num">3</div>
+        <h4>互动培育</h4>
+        <p>持续互动建立信任</p>
+      </div>
+      <div class="sop-arrow">→</div>
+      <div class="sop-step">
+        <div class="step-num">4</div>
+        <h4>转化成交</h4>
+        <p>时机成熟促成交易</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. 组织架构 -->
+  <section class="slide org-slide" data-title="组织架构">
+    <h2 class="h2">成交部组织架构</h2>
+    <div class="org-chart">
+      <div class="org-dept">
+        <h3>成交及交付</h3>
+        <ul>
+          <li>成交团队管理</li>
+          <li>客户签约跟进</li>
+          <li>交付流程管控</li>
+          <li>客户满意度追踪</li>
+        </ul>
+      </div>
+      <div class="org-dept">
+        <h3>商学院</h3>
+        <ul>
+          <li>加盟商培训体系</li>
+          <li>课程开发管理</li>
+          <li>讲师团队建设</li>
+          <li>知识库维护</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. 感谢 -->
+  <section class="slide thanks-slide" data-title="感谢">
+    <h2>感谢各位的观看</h2>
+    <p class="contact">蔚起品牌 · 线上招商方案</p>
+    <div class="row mt-l" style="justify-content: center; gap: 24px;">
+      <span class="pill" style="background: rgba(255,255,255,0.2); color: #fff;">BUSINESS</span>
+    </div>
+  </section>
+
+</div>
+<script src="../assets/runtime.js"></script>
+</body>
+</html>
